@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+use App\Console\Commands\GenerateModelCommand;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Check the command provided via the command line
+$command = $argv[1] ?? '';
+
+// Load necessary classes based on the command
+switch ($command) {
+    case 'myapp:generate-model':
+        // Load and execute code for generating models
+        $generateModelCommand = new GenerateModelCommand();
+        $generateModelCommand->run();
+        break;
+    case 'myapp:start':
+        // Load and execute code for generating models
+        $generateModelCommand = new \App\Console\Commands\StartCommand();
+        $generateModelCommand->run();
+        break;
+    case 'myapp:makemigration':
+        // Load and execute code for generating models
+        $generateModelCommand = new \App\Console\Commands\CreateMigrationCommand();
+        $generateModelCommand->run();
+        break;
+        case 'myapp:migrate':
+            // Load and execute code for generating models
+            $generateModelCommand = new \App\Console\Commands\MigrateCommand();
+            $generateModelCommand->run();
+            break;
+        
+    
+
+    // Add other commands here as needed
+    default:
+        echo "Command not found.\n";
+        break;
+}

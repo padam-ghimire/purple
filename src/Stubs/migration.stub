@@ -1,0 +1,16 @@
+<?php
+
+class %ClassName%
+{
+    public function up()
+    {
+        Schema::create('{{ table }}', function (Blueprint $table) {
+           {{ columns }}
+     })
+   }
+
+    public function down()
+    {
+        // Define schema changes for the down method
+    }
+}
